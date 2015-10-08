@@ -1,0 +1,9 @@
+pain
+pressure
+fever
+temprature
+beatrate
+cough
+dizzy
+cold
+faint

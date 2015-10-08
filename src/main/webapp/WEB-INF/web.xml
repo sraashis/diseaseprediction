@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+
+<welcome-file-list>
+	<welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+  <display-name>Disease Prediction System</display-name>
+	  	 <servlet>
+			 <servlet-name>dispatcher</servlet-name>
+			 <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+			 <load-on-startup>1</load-on-startup>
+	 	</servlet>
+ 
+		 <servlet-mapping>
+			 <servlet-name>dispatcher</servlet-name>
+			 <url-pattern>/</url-pattern>
+		 </servlet-mapping>
+		 
+		 <servlet>
+		    <servlet-name>index</servlet-name>
+		    <jsp-file>/index.jsp</jsp-file>
+		  </servlet>
+		  <servlet-mapping>
+		    <servlet-name>index</servlet-name>
+		    <url-pattern>/home</url-pattern>
+		  </servlet-mapping>
+		  
+		  <servlet>
+		    <servlet-name>add-disease</servlet-name>
+		    <jsp-file>/add_disease.jsp</jsp-file>
+		  </servlet>
+		  <servlet-mapping>
+		    <servlet-name>add-disease</servlet-name>
+		    <url-pattern>/add-disease</url-pattern>
+		  </servlet-mapping>
+		  
+		  <servlet>
+		    <servlet-name>result</servlet-name>
+		    <jsp-file>/result.jsp</jsp-file>
+		  </servlet>
+		  <servlet-mapping>
+		    <servlet-name>result</servlet-name>
+		    <url-pattern>/result</url-pattern>
+		  </servlet-mapping>
+		  
+		  
+		  <servlet>
+		    <servlet-name>add-hospital</servlet-name>
+		    <jsp-file>/add_hospital.jsp</jsp-file>
+		  </servlet>
+		  <servlet-mapping>
+		    <servlet-name>add-hospital</servlet-name>
+		    <url-pattern>/add-hospital</url-pattern>
+		  </servlet-mapping>
+		  
+		  <servlet>
+		    <servlet-name>status</servlet-name>
+		    <jsp-file>/status.jsp</jsp-file>
+		  </servlet>
+		  <servlet-mapping>
+		    <servlet-name>status</servlet-name>
+		    <url-pattern>/status</url-pattern>
+		  </servlet-mapping>
+		  
+		  <servlet>
+		    <servlet-name>logout</servlet-name>
+		    <jsp-file>/logout.jsp</jsp-file>
+		  </servlet>
+		  <servlet-mapping>
+		    <servlet-name>logout</servlet-name>
+		    <url-pattern>/logout</url-pattern>
+		  </servlet-mapping>
+		  
+		  <servlet>
+		    <servlet-name>faq</servlet-name>
+		    <jsp-file>/faq.jsp</jsp-file>
+		  </servlet>
+		  <servlet-mapping>
+		    <servlet-name>faq</servlet-name>
+		    <url-pattern>/faq</url-pattern>
+		  </servlet-mapping>
+  
+</web-app>

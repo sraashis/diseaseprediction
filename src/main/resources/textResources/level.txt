@@ -1,0 +1,4 @@
+high
+low
+mild
+rapid

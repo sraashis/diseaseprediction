@@ -1,0 +1,11 @@
+feverhigh
+bloodpressurelow
+heartbeatrapid
+bloodpressurehigh
+coughmild
+dizzy
+cold
+naussea
+chestpain
+faint
+headpain

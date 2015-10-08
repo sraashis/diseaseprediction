@@ -1,0 +1,85 @@
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+
+
+#nav_header{
+	 color:  #8FB58F;
+	 font-size:24px;
+}
+
+.selected{
+	background-color: #9dff9d;
+}
+
+fieldset.training_border{
+	border: 2px solid green;
+	padding: 5px;
+}
+fieldset.training_border > legend {
+    width:inherit; /* Or auto */
+    padding:2px; /* To give a bit of padding on the left and right */
+    border:none;
+    margin:5px;
+}
+
+#user_suggestion{
+	border: 2px solid #c0c0c0;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+	margin-bottom: -5px;
+	color: #eaeaea;
+	background-color: green;
+	
+}
+#user_example{
+	border: 2px solid #c0c0c0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding:5px;
+	margin-top:-15px;
+	background-color: #E1F7D8;
+	color: #008000;
+	font-style: italic;
+}
+
+#loginModal{
+	color: black;
+	background-color: #008000;
+	
+}
+
+.modal-content{
+	background-color:  #d9ffd9;
+	
+}
+
+.dropdown-menu{
+	background-color: #d4d4d4;
+	border:1px solid green;
+}
+
+.navbar{
+	border-bottom: 1px solid green;
+}
+
+.accordion-toggle{
+	color: #99A8A1;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+

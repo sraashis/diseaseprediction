@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   					   
+	   					   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	   					   		  <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+							      <property name="url" value="jdbc:hsqldb:hsql://localhost"/>
+							      <property name="username" value="sa"/>
+							      <property name="password" value=""/>
+	   					   </bean>
+	   					   
+	   					   <bean id="appDAO" class="org.aacish.disease_prediction.DAO.AppDAOService">
+	   					   		<constructor-arg ref="dataSource"/>
+	   					   </bean>
+	   					   
+	   					   <bean id="vocabDAO" class="org.aacish.disease_prediction.DAO.VocabDAOService" >
+	   					   		<property name="organFile" value="textResources/organs.txt"/>
+	   					   		<property name="conditionFile" value="textResources/condition.txt"/>
+	   					   		<property name="levelFile" value="textResources/level.txt"/>
+	   					   		<property name="symptomsFile" value="textResources/symptoms.txt"/>
+	   					   </bean>
+	   					   
+	   					   <bean id="textProcessor" class="org.aacish.disease_prediction.nlp.InputTextProcessor">
+	   					   		<property name="vocabDAO" ref="vocabDAO"/>
+	   					   </bean>
+	   					   
+	   					   <bean id="inputParameter" class="org.aacish.disease_prediction.classifier.PrepareInputParameter" >
+	   					   		<property name="vocabDAO" ref="vocabDAO"/>
+	   					   </bean>
+	   					   
+	   					   <bean id="algorithm" class="org.aacish.disease_prediction.classifier.BernoulliNaiveBayesClassifier" />
+	   					   	
+	   					   
+	   					   <bean id="predict" class="org.aacish.disease_prediction.BO.PredictService">
+	   					   	<constructor-arg ref="appDAO"/>
+	   					   	<constructor-arg ref="textProcessor" />
+	   					   	<constructor-arg ref="inputParameter"/>
+	   					   	<constructor-arg ref="algorithm"/>
+	   					   </bean>
+	   					   		
+	   					   
+	   					  <bean id="trainer" class="org.aacish.disease_prediction.BO.TrainerService">
+	   					   	<constructor-arg ref="appDAO"/>
+	   					   	<constructor-arg ref="vocabDAO"/>
+	   					   	<constructor-arg ref="textProcessor" />
+	   					   	<constructor-arg ref="inputParameter"/>
+	   					   </bean>
+	   					   
+	   					   <bean id="dictionary" class="org.aacish.disease_prediction.BO.SymptomsDictionary">
+	   					   		<constructor-arg ref="vocabDAO"/>
+	   					   </bean>
+	   					   
+</beans>
